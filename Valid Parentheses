@@ -1,0 +1,43 @@
+/*
+Objective - Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. 
+The function should return true if the string is valid, and false if it's invalid.
+
+*/
+
+
+function validParentheses(parens){
+  //TODO
+  
+  
+  
+  let x = parens.length;
+  let right =[];
+  let left = [];
+  let pernArr = parens.split('');
+  
+  for(let i = 0; i<pernArr.length; i++){
+    if(pernArr[i] === ')'){
+    right.push(pernArr[i])
+    }else if(pernArr[i] === '('){
+    left.push(pernArr[i]);
+    } else if(pernArr[i] !== ')' || pernArr[i] !== '('){
+        return false;
+        
+    }
+    
+  }
+  
+  
+ if(x %2 !== 0){
+  return false;
+  }else if(parens[0] === ')' || parens[x - 1] === '('){
+  return false;
+  }else if (left.length === right.length){
+  return true;
+  } else if(left.length !== right.length){
+  return false;
+  }
+  
+ return left.length + ' ' + right.length; 
+  
+}
