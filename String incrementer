@@ -1,0 +1,30 @@
+function incrementString (strng) {
+  // return incrementedStri,v
+  let newLetter = strng.replace(/[0-9]/g, '');
+  let newNumber = strng.replace(/[a-zA-Z]/g, '');
+  let zeros = newNumber.length;
+  let newNumber2 = ''; 
+ 
+  if(strng.length === 0){
+  return '1';
+  }else if(newNumber.length ===0){
+      return `${newLetter}1`
+  }   
+      
+  let x = parseInt(newNumber);
+    x++;
+  newNumber2 = x.toString();
+  
+    
+    
+if(newNumber2.length !== zeros){
+        let y = zeros - newNumber2.length;
+        if(y > 0){
+        let b = '0'.repeat(y);
+        newNumber2 = `${b}${newNumber2}`
+        }
+    }
+    
+ 
+ return `${newLetter}${newNumber2}`
+}
