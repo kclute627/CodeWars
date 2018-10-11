@@ -1,0 +1,13 @@
+function accum(s) {
+	// your code
+  let newStrCap = s.toUpperCase();
+  let finalStr ='';
+  s = s.toLowerCase();
+  
+  for (let i =0; i <s.length; i++){
+  finalStr += `${newStrCap[i]}${s[i].repeat(i)}-`;
+  }
+  
+  
+  return finalStr.slice(0,-1);
+}
